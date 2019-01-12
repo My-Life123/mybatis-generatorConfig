@@ -5,6 +5,17 @@
 
 <generatorConfiguration>
 	<context id="Tables" targetRuntime="MyBatis3">
+		<!-- JavaBean 实现 序列化 接口 -->
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+		<!-- genenat entity时,生成toString -->
+		<!--<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />-->
+		<!-- 自定义物理分页  可生成支持Mysql数据的limit  不支持Oracle -->
+		<plugin type="org.mybatis.generator.plugins.page.PaginationPlugin" />
+		<!-- 自定义查询指定字段  -->
+		<!--<plugin type="org.mybatis.generator.plugins.field.FieldsPlugin" />-->
+
+
+
         <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
             <property name="searchString" value="Example$" />
             <!-- 替换后  -->
